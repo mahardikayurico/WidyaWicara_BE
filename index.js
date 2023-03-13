@@ -15,13 +15,17 @@ app.use(urlencoded({ extended: true }));
 app.use(express.static("src"));
 //menerima json
 const corsOptions = {
-  origin: ["http://localhost:5000", "http://192.168.1.10:5000"],
+  origin: [
+    "http://localhost:5000",
+    "http://192.168.1.10:5000",
+    "https://enthusiastic-lion-neckerchief.cyclic.app/",
+  ],
   allowHeaders: ["x-access-token", "content-type"],
   methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
 };
 app.use(json());
-// app.use(cors(corsOptions));
-app.use(cors());
+app.use(cors(corsOptions));
+// app.use(cors());
 
 app.use("/api/v1/", router);
 

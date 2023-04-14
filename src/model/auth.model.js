@@ -27,10 +27,10 @@ const authModel = {
       );
     });
   },
-  register: ({ fullname, username, password, email }) => {
+  register: ({ fullname, username, password, gender }) => {
     return new Promise((resolve, reject) => {
       db.query(
-        `INSERT INTO users (id, fullname, username, password, email) VALUES ('${uuidv4()}','${fullname}','${username}','${password}','${email}') RETURNING id`,
+        `INSERT INTO users (id, fullname, username, password, jenis_kelamin) VALUES ('${uuidv4()}','${fullname}','${username}','${password}','${gender}') RETURNING id`,
         (err, result) => {
           if (err) {
             return reject(err.message);
@@ -39,7 +39,7 @@ const authModel = {
             fullname,
             username,
             password,
-            email,
+            gender,
           });
         }
       );

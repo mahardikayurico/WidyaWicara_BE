@@ -1,27 +1,28 @@
 {
-  "name": "coffeeshop_be",
+  "name": "widyawicara_be",
   "version": "0.0.1",
-  "description": "api service for coffe shop project, build with express and postgreesql",
+  "description": "api service for widyawicara project, build with express and postgreesql",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mahardikayurico/coffeeshop_be.git"
+    "url": "git+https://github.com/mahardikayurico/WidyaWicara_BE.git"
   },
   "keywords": [
     "backend",
     "service",
     "server",
-    "coffeshop"
+    "widyawicara"
   ],
   "author": "mahardika yurico",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mahardikayurico/coffeeshop_be/issues"
+    "url": "https://github.com/mahardikayurico/WidyaWicara_BE/issues"
   },
-  "homepage": "https://github.com/mahardikayurico/coffeeshop_be#readme",
+  "homepage": "https://github.com/mahardikayurico/WidyaWicara_BE#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",

@@ -8,19 +8,15 @@ const authController = {
     return authModel
       .login(req.body)
       .then((result) => {
-        jwt.sign(
-          { id: result.id, role: result.role },
-          JWT_PRIVATE_KEY,
-          (err, token) => {
-            return res.status(200).send({
-              message: "success",
-              data: {
-                token,
-                user: result,
-              },
-            });
-          }
-        );
+        jwt.sign({ id: result.id }, JWT_PRIVATE_KEY, (err, token) => {
+          return res.status(200).send({
+            message: "success",
+            data: {
+              token,
+              user: result,
+            },
+          });
+        });
       })
       .catch((error) => {
         return res.status(500).send({ message: error });
@@ -36,7 +32,7 @@ const authController = {
           fullname: req.body.fullname,
           username: req.body.username,
           password: hash,
-          email: req.body.email,
+          gender: req.body.gender,
         };
         return authModel
           .register(request)
